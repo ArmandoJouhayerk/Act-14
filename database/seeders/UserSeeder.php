@@ -16,8 +16,8 @@ class UserSeeder extends Seeder
     {
         //
         $spiderman=new User;
-        $spiderman->ID=1;
         $spiderman->name="Spiderman";
+        $spiderman->user_id=1;
         $spiderman->real_name="Peter Parker";
         $spiderman->gender="male";
         $spiderman->universeID=4; 
@@ -25,9 +25,9 @@ class UserSeeder extends Seeder
         $spiderman->passwords=Hash::make("Pass123");
         $spiderman->save(); 
 
-        $hulk=new User;
-        $hulk->ID=2; 
+        $hulk=new User; 
         $hulk->name="HULK";
+        $hulk->user_id=2;
         $hulk->real_name="Bruce Banner";
         $hulk->gender="male";
         $hulk->universeID=4;
@@ -36,8 +36,8 @@ class UserSeeder extends Seeder
         $hulk->save();
 
         $cap=new User;
-        $cap->ID=3;
         $cap->name="Capitan America";
+        $cap->user_id=3;
         $cap->real_name="Steve Rogers"; 
         $cap->gender="male";
         $cap->universeID=4;
@@ -46,8 +46,8 @@ class UserSeeder extends Seeder
         $cap->save();
 
         $superman=new User;
-        $superman->ID=4;
         $superman->name="Superman";
+        $superman->user_id=4;
         $superman->real_name="Clark Kentt";
         $superman->gender="male";
         $superman->universeID=2;
@@ -56,8 +56,8 @@ class UserSeeder extends Seeder
         $superman->save();
 
         $bat=new User;
-        $bat->ID=5;
         $bat->name="Batman";
+        $bat->user_id=5;
         $bat->real_name="Bruce Wayne";
         $bat->gender="male";
         $bat->universeID=1;
@@ -66,8 +66,8 @@ class UserSeeder extends Seeder
         $bat->save();
 
         $ben=new User;
-        $ben->ID=6;
         $ben->name="Scarlet Spider";
+        $ben->user_id=6;
         $ben->real_name="Ben Reilly";
         $ben->gender="male";
         $ben->universeID=5;
@@ -76,8 +76,8 @@ class UserSeeder extends Seeder
         $ben->save(); 
 
         $ww=new User;
-        $ww->ID=7;
         $ww->name="Wonder Woman"; 
+        $ww->user_id=7;
         $ww->real_name="Diana Prince";
         $ww->gender="female";
         $ww->universeID=1;
@@ -86,8 +86,8 @@ class UserSeeder extends Seeder
         $ww->save(); 
 
         $doom=new User;
-        $doom->ID=8;
         $doom->name="Doomsday";
+        $doom->user_id=8;
         $doom->real_name="unknow";
         $doom->gender="unknow";
         $doom->universeID=3;
@@ -96,8 +96,8 @@ class UserSeeder extends Seeder
         $doom->save(); 
 
         $scarlet=new User;
-        $scarlet->ID=9;
         $scarlet->name="Scarlet witch";
+        $scarlet->user_id=9;
         $scarlet->real_name="Wanda Maximoff";
         $scarlet->gender="female";
         $scarlet->universeID=5;
@@ -107,6 +107,7 @@ class UserSeeder extends Seeder
 
         $wing=new User;
         $wing->name="Nigth Wing";
+        $wing->user_id=10;
         $wing->real_name="Dick Grayson";
         $wing->gender="male";
         $wing->universeID=3;
