@@ -1,30 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit superpower</title>
-</head>
+@include('shared.head')
+
 <body>
-    <h1>Edit superpower</h1>
+<h1 style="text-align:center;">{{ $page_title }}</h1>
 
-    <form action="{{ route('superpowers.update', $superpower->id) }}" method="post">
-        @method('put')
-        @csrf
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-9 col-lg-6">
+            <form action="{{ route('superpowers.update', $superpower->id) }}" method="post">
+                @method('put')
+                @csrf
+                
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name *</label> 
+                    <input type="text" name="name" class="form-control" value="{{ $superpower->name }}">
+                </div>
 
-        <label for="name">Name</label> <br>
-        <input type="text" name="name" value="{{ $superpower->name }}"> 
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label> 
+                    <textarea name="description" cols="50" rows="5" class="form-control">{{ $superpower->description }}</textarea>
+                </div>
+            
+                <div class="text-end">
+                    <button type="submit" class="btn btn-warning">Edit superpower</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
-        <br><br>
-        
-        <label for="description">Description</label>{{ $superpower->description }}<br>
-        <textarea name="description" cols="50" rows="10"></textarea>
-
-        <br>
-        <br>
-        
-        <button type="submit">Edit superpower</button>
-    </form>
 </body>
 </html>

@@ -31,5 +31,6 @@ Route::middleware('auth')->group(function () {
 }); 
 
 Route::get('/superpowers', [SuperPowersController::class], 'superpowers')->name('superpowers'); 
+Route::resource('registros', RegistrosController::class)->middleware('auth');
 
 require __DIR__.'/auth.php';

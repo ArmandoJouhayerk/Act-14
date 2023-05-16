@@ -1,29 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create superpower</title>
-</head>
+@include('shared.head')
+
 <body>
-    <h1>Create superpower</h1>
+<h1 style="text-align:center;">{{ $page_title }}</h1>
 
-    <form action="{{ route('superpowers.store') }}" method="post">
-        
-        @csrf
-        <label for="name">Name</label> <br>
-        <input type="text" name="name"> 
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-9 col-lg-6">
+            <form action="{{ route('superpowers.store') }}" method="post">
+                @csrf
+            
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name *</label>
+                    <input type="text" name="name" class="form-control">
+                </div>
 
-        <br><br>
-        
-        <label for="description">Description</label> <br>
-        <textarea name="description" cols="50" rows="5"></textarea>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea name="description" cols="50" rows="5" class="form-control"></textarea>
+                </div>
+            
+                <!-- <input type="submit" value="Create superpower"> -->
 
-        <br>
-        <br>
-        
-        <button type="submit">Create superpower</button>
-    </form>
+                <div class="text-end">
+                    <button type="submit" class="btn btn-success">Create superpower</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
